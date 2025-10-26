@@ -1,0 +1,401 @@
+/* css/responsive.css */
+
+/* ============================================= */
+/* ESTILOS PARA RESPONSIVIDADE                   */
+/* ============================================= */
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+@media (max-width: 992px) {
+
+    /* Ponto de quebra maior para tablets */
+    .container {
+        padding: 0 15px;
+    }
+
+    h1 {
+        font-size: 4.5rem;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    #main-header {
+        padding: 15px 25px;
+    }
+
+    #main-header.scrolled {
+        padding: 10px 25px;
+    }
+
+    /* Oculta nav e botão cta no tablet */
+    #main-header nav,
+    #main-header .cta-button {
+        display: none;
+    }
+
+    /* Mostra o hambúrguer */
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        z-index: 101;
+        /* Fica acima do menu mobile quando aberto */
+        position: relative;
+        /* Para animar as linhas */
+        width: 30px;
+        height: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hamburger-menu span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--text-light);
+        /* Cor do hambúrguer */
+        border-radius: 2px;
+        transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    /* Animação do X */
+    .hamburger-menu.is-active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+
+    .hamburger-menu.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.is-active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+
+
+    /* Menu Lateral Mobile */
+    #main-header nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* Começa escondido */
+        width: 75%;
+        max-width: 350px;
+        height: 100vh;
+        background-color: var(--bg-dark);
+        display: flex;
+        /* Volta a ser flex para alinhar o conteúdo */
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 80px;
+        transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        z-index: 100;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    #main-header nav.nav-active {
+        right: 0;
+        /* Mostra o menu */
+    }
+
+    .nav-mobile-header {
+        display: block;
+        /* Mostra o logo no menu mobile */
+        margin-bottom: 60px;
+    }
+
+    .nav-mobile-header .logo a {
+        color: var(--text-light);
+        font-size: 2.2rem;
+    }
+
+    #main-header nav ul {
+        flex-direction: column;
+        gap: 25px;
+        width: 100%;
+        padding: 0;
+    }
+
+    #main-header nav ul li {
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        transform: translateX(30px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    #main-header nav.nav-active ul li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* Efeito cascata para links do menu mobile */
+    #main-header nav.nav-active ul li:nth-child(1) {
+        transition-delay: 0.2s;
+    }
+
+    #main-header nav.nav-active ul li:nth-child(2) {
+        transition-delay: 0.3s;
+    }
+
+    #main-header nav.nav-active ul li:nth-child(3) {
+        transition-delay: 0.4s;
+    }
+
+    #main-header nav.nav-active ul li:nth-child(4) {
+        transition-delay: 0.5s;
+    }
+
+    #main-header nav.nav-active ul li:nth-child(5) {
+        transition-delay: 0.6s;
+    }
+
+    #main-header nav.nav-active ul li:nth-child(6) {
+        transition-delay: 0.7s;
+    }
+
+    /* Se tiver mais links */
+
+
+    #main-header nav ul li a {
+        font-size: 1.1rem;
+        padding: 12px 0;
+        display: block;
+        color: var(--text-light);
+        /* Cor dos links do menu mobile */
+    }
+
+    .hero-content .cursive-text {
+        font-size: 2.2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-content .date {
+        font-size: 1.4rem;
+    }
+
+    .page-banner h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+
+    /* Ponto de quebra para celulares menores */
+    #main-header {
+        padding: 12px 15px;
+    }
+
+    #main-header.scrolled {
+        padding: 8px 15px;
+    }
+
+    #main-header .logo a {
+        font-size: 1.6rem;
+    }
+
+    .hero-content .cursive-text {
+        font-size: 1.8rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-content .date {
+        font-size: 1.2rem;
+    }
+
+    .hero-content .quote {
+        font-size: 0.9rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .page-banner {
+        padding: 120px 15px 60px;
+    }
+
+    .page-banner h2 {
+        font-size: 2rem;
+    }
+
+    .page-banner p {
+        font-size: 0.95rem;
+    }
+
+    .modal-content {
+        padding: 25px;
+    }
+
+    .modal-content .close-modal {
+        font-size: 2rem;
+        top: 10px;
+        right: 12px;
+    }
+
+    #modal-gift-name {
+        font-size: 1.3rem;
+    }
+
+    #modal-gift-value {
+        font-size: 1.7rem;
+    }
+}
+
+/* EM css/responsive.css */
+
+/* ============================================= */
+/* RESPONSIVIDADE DO MODAL              */
+/* ============================================= */
+/* ============================================= */
+/* --- PONTO DE QUEBRA: CELULARES (576px) --- */
+/* ============================================= */
+@media (max-width: 576px) { 
+    #main-header {
+        padding: 12px 15px;
+    }
+
+    #main-header.scrolled {
+        padding: 8px 15px;
+    }
+
+    #main-header .logo a {
+        font-size: 1.6rem;
+    }
+
+    .hero-content .cursive-text {
+        font-size: 1.8rem;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+    .hero-content .date {
+        font-size: 1.2rem;
+    }
+    .hero-content .quote {
+        font-size: 0.9rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .page-banner {
+        padding: 120px 15px 60px;
+    }
+    .page-banner p {
+        font-size: 0.95rem;
+    }
+
+    /* --- Regras do Modal mescladas aqui --- */
+
+    .modal-content {
+        padding: 25px 20px; /* Diminui o espaçamento interno */
+        
+        /* CORREÇÃO DA ALTURA:
+          1. Limita a altura do modal a 90% da altura da tela (vh = viewport height).
+          2. Adiciona rolagem *dentro* do modal se o conteúdo for muito alto.
+        */
+        max-height: 90vh;
+        overflow-y: auto;
+
+        /* A regra 'width: 95%' foi removida (pois já está no gifts.css) */
+        /* A regra 'max-width: none;' foi removida (pois era o bug da largura) */
+    }
+    
+    .modal-content .close-modal {
+        top: 8px;
+        right: 12px;
+        font-size: 2rem;
+    }
+
+    .modal-content h2 {
+        font-size: 1.8rem; /* Diminui o título */
+    }
+
+    #modal-gift-name {
+        font-size: 1.3rem;
+    }
+
+    #modal-gift-value {
+        font-size: 1.7rem;
+    }
+
+    .modal-gift-info p {
+        font-size: 1.1rem;
+    }
+
+    #pix-qrcode-img {
+        max-width: 200px; /* Diminui o tamanho do QR Code */
+    }
+
+    .pix-instructions p {
+        font-size: 0.9rem; /* Diminui o texto de instrução */
+    }
+
+    /* Garante que os inputs e botões ocupem 100% da largura */
+    #confirmation-form input,
+    #confirmation-form button,
+    .pix-copy-paste input,
+    .pix-copy-paste button {
+        font-size: 1rem;
+    }
+
+    .pix-copy-paste {
+        flex-direction: column; /* Coloca o botão "Copiar" abaixo do campo */
+    }
+}
+
+/* ========================================= */
+/* --- ESTILOS RESPONSIVOS: TIMELINE --- */
+/* ========================================= */
+@media (max-width: 768px) {
+
+    /* Ajustes de tipografia da timeline */
+    .page-banner h2 {
+        font-size: 2rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Diminui o espaço no mobile */
+    .timeline-item {
+        gap: 20px;
+    }
+
+    .event-timeline::before {
+        left: 15px;
+        /* Metade de 30px */
+    }
+
+    .timeline-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .timeline-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* Ajuste do card */
+    .timeline-content {
+        padding: 20px;
+    }
+}

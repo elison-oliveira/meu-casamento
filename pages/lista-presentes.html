@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Presentes | Déborah & Elison</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="page-banner">
+            <div class="container" data-aos="fade-in">
+                <h2>Nossos Sonhos, Seu Carinho</h2>
+                <p>Sua presença é o nosso maior presente, mas se quiser nos ajudar a construir nosso novo lar, cada
+                    gesto se transforma em um pedaço do nosso futuro. 💖</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div id="gift-grid-container" class="gift-grid">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="pix-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Realizar Pagamento</h2>
+                <button class="close-modal" aria-label="Fechar modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-gift-info">
+                    <p>Você está presenteando com:</p>
+                    <strong id="modal-gift-name">Nome do Presente Aqui</strong>
+                </div>
+
+                <div class="payment-details">
+                    <img id="pix-qrcode-img" src="" alt="QR Code PIX">
+                    <div class="pix-copy-paste">
+                        <input type="text" id="pix-key-input" value="81989019405" readonly>
+                        <button id="copy-pix-key-button" class="button">
+                            <span class="copy-text">Copiar Chave</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="pix-instructions">
+                    <p>Após o Pix, preencha seus dados abaixo para nos avisar!</p>
+                </div>
+                <form id="confirmation-form">
+                    <div id="contribution-section" class="form-section" style="display: none;">
+                        <label for="contribution-amount">Valor da sua contribuição:</label>
+                        <div class="input-group">
+                            <span>R$</span>
+                            <input type="number" id="contribution-amount" placeholder="50,00" min="1">
+                        </div>
+                    </div>
+
+                    <div id="fixed-value-section" class="form-section" style="display: none;">
+                        <p class="price" id="modal-gift-value"></p>
+                    </div>
+
+                    <div class="input-group">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <input type="text" id="guest-name" placeholder="Seu nome completo" required>
+                    </div>
+                    <br>
+                    <button id="notify-whatsapp-button" type="submit" class="button">Avisar no WhatsApp</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
+</body>
+
+</html>

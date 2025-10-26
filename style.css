@@ -1,0 +1,25 @@
+/* style.css */
+
+/* 1. Base e estilos globais */
+@import url('css/base.css');
+
+/* 2. Estilos do Header */
+@import url('css/header.css');
+
+/* 3. Estilos da seção Hero (página inicial) */
+@import url('css/hero.css');
+
+/* 4. Estilos de seções de conteúdo genéricas */
+@import url('css/sections.css');
+
+/* 5. ESTILO ADICIONADO PARA A TIMELINE */
+@import url('css/timeline.css');
+
+/* 6. Estilos específicos da Lista de Presentes e Modal */
+@import url('css/gifts.css');
+
+/* 7. Estilos do Footer */
+@import url('css/footer.css');
+
+/* 8. Estilos Responsivos (SEM PRECEDENTES, DEVE SER O ÚLTIMO) */
+@import url('css/responsive.css');

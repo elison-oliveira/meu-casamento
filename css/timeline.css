@@ -1,0 +1,167 @@
+/* css/timeline.css */
+/* Estilos da página "O Grande Dia" (Banner e Timeline) */
+
+/* --- BANNER DA PÁGINA --- */
+.page-banner {
+    background-color: #EAE0D5;
+    padding: 60px 20px;
+    text-align: center;
+}
+.page-banner h2 {
+    margin-bottom: 10px;
+}
+.page-banner p {
+    font-size: 1.1rem;
+    color: #fff; /* Corrigido para ser legível */
+    margin: 0;
+}
+
+/* --- SEÇÃO DA TIMELINE --- */
+.event-timeline-section {
+    padding: 80px 0;
+}
+
+/* A "linha" da timeline */
+.event-timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px;
+    position: relative;
+    /* REMOVIDO: padding-left: 60px; (Não precisamos mais) */
+}
+
+/* A linha vertical */
+.event-timeline::before {
+    content: '';
+    position: absolute;
+    /* Deixamos a linha a 20px da esquerda. 
+      (Metade da largura do ícone, que é 40px) 
+    */
+    left: 20px; 
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background-color: #C0A98E;
+    opacity: 0.5;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+
+    /* --- MUDANÇA PRINCIPAL COM FLEX --- */
+    display: flex;          /* 1. Ativa o Flexbox */
+    align-items: flex-start;/* 2. Alinha o topo do ícone com o topo do card */
+    gap: 30px;              /* 3. ADICIONA O ESPAÇO DE 30px QUE VOCÊ QUERIA */
+}
+/* ... */
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* O ícone circular */
+.timeline-icon {
+    /* --- MUDANÇAS NO ÍCONE --- */
+    /* REMOVIDO: position: absolute; */
+    /* REMOVIDO: left: 20px; */
+    /* REMOVIDO: transform: translateX(-50%); */
+    /* REMOVIDO: z-index: 10; */
+
+    flex-shrink: 0; /* Impede o ícone de encolher */
+    
+    /* MANTIDO (Ajuste para alinhar com o texto como antes) */
+    margin-top: 5px; 
+
+    /* MANTIDO (Estilos visuais) */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #C0A98E;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #FDFBF7;
+}
+.timeline-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* O card de conteúdo (classe padronizada) */
+.timeline-content {
+    /* ADICIONADO: */
+    flex-grow: 1; /* Faz o card ocupar todo o espaço restante */
+
+    /* MANTIDO (Estilos visuais) */
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 25px 30px;
+    position: relative;
+}
+
+/* --- ELEMENTOS DOS CARDS (Tudo abaixo permanece igual) --- */
+.card-description {
+    color: #6d6d6d;
+    font-size: 0.95rem;
+}
+
+.button {
+    display: inline-block;
+    background-color: #C0A98E;
+    color: #FFFFFF;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.button:hover {
+    background-color: #A98F75; 
+    transform: translateY(-2px);
+}
+
+.schedule-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+.schedule-list li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+    font-size: 0.95rem;
+}
+.schedule-list li::before {
+    content: '•';
+    color: #C0A98E;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+.schedule-list li strong {
+    color: #5D4037;
+}
+
+.color-palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+.color-swatch {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #f1f1f1;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

@@ -1,0 +1,134 @@
+/* --- Estilos da Seção Principal (Hero) --- */
+.hero {
+    height: 100vh;
+    background-image: url('../images/foto-casal.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.hero-content .cursive-text,
+.hero-content h1,
+.hero-content .date,
+.hero-content .quote {
+    font-family: 'Playfair Display', serif; /* Consolidado para consistência */
+}
+
+.hero-content .cursive-text {
+    font-size: 2.5rem;
+    color: #e0ac69;
+    margin-bottom: 10px;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.hero-content .date {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.hero-content .quote {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif; /* Citação fica melhor com a fonte base */
+}
+
+/* --- Estilos para as Seções de Conteúdo --- */
+.content-section, .content-section-dark {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.content-section {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.content-section-dark {
+    background-color: #e0ac69;
+    color: #fff;
+}
+
+.content-section h2, .content-section-dark h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.content-section p, .content-section-dark p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* --- Banner no Topo da Página --- */
+.page-banner {
+    padding: 120px 20px;
+    color: #fff;
+    text-align: center;
+    background-image: url('../images/foto-casal.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.page-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.page-banner .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Estilos do Footer --- */
+.main-footer {
+    background-color: #252525;
+    color: #a0a0a0;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+}
+
+.main-footer p {
+    margin-bottom: 5px;
+}
